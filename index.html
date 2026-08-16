@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trekt</title>
+  <style>
+    .rat {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 25px;
+      text-align: left;
+      margin: 0px 15px;
+    }
+
+    .logo {
+      color: green;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    nav {
+      text-align: left;
+      font-size: medium;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      text-transform: capitalize;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .button > a {
+      border-radius: 20px;
+      padding: 10px 50px;
+      margin: 0px 10px;
+      background-color: green;
+      color: white;
+    }
+
+    .omo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .goat {
+      margin: 20px;
+      font-size: 20px;
+    }
+
+    article > form > input {
+      border-radius: 50px;
+      border: 1px solid black;
+      padding: 5px 30px;
+      width: 50%;
+    }
+
+    .pic {
+      width: 50%;
+      margin: 0px 20px;
+    }
+
+    .ewu {
+      border-radius: 50px;
+      background-color: green;
+      color: white;
+      padding: 5px 10px;
+      margin-left: -80px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .pro {
+      text-align: center;
+    }
+
+    .pro > h6 {
+      color: green;
+      font-weight: bold;
+    }
+
+    .pro > h1 {
+      margin-top: -20px;
+      padding-top: 0px;
+    }
+
+    .pro > p {
+      color: gray;
+      margin-top: -5px;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      margin: 0px 100px;
+    }
+
+    .icon {
+      text-align: center;
+    }
+
+    .icon > img {
+      border: 10px solid black;
+      border-radius: 30px;
+    }
+
+    .line {
+      width: 7rem;
+      background-color: gray;
+      border: 0.5px solid gray;
+      max-height: 0.001rem;
+      margin-top: 4rem;
+      align-self: stretch;
+    }
+
+    /* Features */
+    .features {
+      background: honeydew;
+      padding: 50px 60px;
+    }
+
+    .tag{
+      color: green;
+    }
+
+    .features-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .features-header h2 {
+      font-size: 28px;
+      margin: 8px 0 8px;
+    }
+
+    .features-header .subtext {
+      margin: 0;
+      max-width: 380px;
+      text-align: left;
+    }
+
+    .scroll-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .scroll-btns button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: seagreen;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .scroll-btns button:hover {
+      background: darkgreen;
+    }
+
+    .feature-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .feature-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      flex: 0 0 200px;
+      min-width: 200px;
+    }
+
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .feature-card:nth-child(1) .feature-icon { background: lightblue; }
+    .feature-card:nth-child(2) .feature-icon { background: lightyellow; }
+    .feature-card:nth-child(3) .feature-icon { background: palegreen; }
+    .feature-card:nth-child(4) .feature-icon { background: lavender; }
+    .feature-card:nth-child(5) .feature-icon { background: lightpink; }
+
+    .feature-card h4 {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .feature-card p {
+      color: gray;
+      font-size: 12px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .feature-card a {
+      color: seagreen;
+      font-size: 12px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Benefits */
+    .benefits {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 80px 60px;
+      flex-wrap: wrap;
+    }
+
+    .benefits-image,
+    .benefits-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .benefits-text h2 {
+      font-size: 32px;
+      margin: 10px 0 12px;
+    }
+
+    .benefits-list {
+      list-style: none;
+      margin-top: 20px;
+      margin: 0px -40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .benefits-list li {
+      font-size: 14px;
+      color: darkslategray;
+    }
+
+    @media (max-width: 768px) {
+      .rat { flex-direction: column; text-align: center; gap: 15px; }
+      .omo { flex-direction: column; text-align: center; }
+      .container { flex-direction: column; gap: 20px; margin: 0px 20px; }
+      .line { width: 60%; height: 2px; margin: 10px auto; }
+      .benefits { flex-direction: column; text-align: center; }
+      .benefits-list { grid-template-columns: 1fr; }
+      .features { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rat">
+    <strong><a href="" class="logo">Trekit.</a></strong>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="button"><a href="get-started.html">Get Started</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="omo">
+    <article class="goat">
+      <h1>Your roadmap <br>to product <br>management</h1>
+      <p>Trekt is a product education platform. Trekt aims to <br>empower individuals to become product managers.</p>
+      <form action="">
+        <input type="text" value="" placeholder="Input your email address">
+        <button class="ewu">Subscribe</button>
+      </form>
+    </article>
+    <img src="images/pic2.jpg" alt="" class="pic">
+  </section>
+
+  <section class="pro">
+    <h6>WHAT WE DO</h6>
+    <h1>Our Offer</h1>
+    <p>Our goal to educate young professionals on the product management industry while also providing users a way to practice the skill</p>
+  </section>
+
+  <div class="container">
+    <div class="icon">
+      <img src="images/pic3.jpg" alt="" width="100px">
+      <h4><strong>Learn</strong></h4>
+      <p>Learn the ins and outs of <br>product management</p>
+    </div>
+    <span class="line"></span>
+
+    <div class="icon">
+      <img src="images/pic4.jpg" alt="" width="100px">
+      <h4>Practice</h4>
+      <p>we provide product <br>management excercises so you <br>can sharpen your skills</p>
+    </div>
+    <span class="line"></span>
+
+    <div class="icon">
+      <img src="images/pic5.jpg" alt="" width="100px">
+      <h4>Grow</h4>
+      <p>Connect aspiring product <br>managers with incredible <br>companies</p>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="features-header">
+      <div>
+        <span class="tag">Learn More</span>
+        <h2>Features</h2>
+        <p class="subtext">Our goal is to educate young professionals on the product management industry while also providing users a way to practice their skills.</p>
+      </div>
+      <div class="scroll-btns">
+        <button id="scrollLeft">&#8249;</button>
+        <button id="scrollRight">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="feature-scroll" id="featureScroll">
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h4>Create product roadmaps</h4>
+        <p>Taking products from initial concept through user research, co-creation, and rapid prototyping.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h4>Free to set up</h4>
+        <p>Taking products from initial concept through user research, co-creation, and rapid prototyping.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">➕</div>
+        <h4>Automatically updates</h4>
+        <p>Taking products from initial concept through user research, co-creation, and rapid prototyping.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚩</div>
+        <h4>Plan Your Roadmap</h4>
+        <p>Taking products from initial concept through user research, co-creation, and rapid prototyping.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h4>Track Progress</h4>
+        <p>Taking products from initial concept through user research, co-creation, and rapid prototyping.</p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="benefits-image">
+      <img src="images/pic6.jpg" alt="Benefits Image" style="width: 100%; border-radius: 12px;">
+    </div>
+    <div class="benefits-text">
+      <span class="tag">Why Our Program</span>
+      <h2>Benefits</h2>
+      <p class="subtext">Trekt is a product education platform. Trekt aims to empower individuals to become Product Managers.</p>
+      <ul class="benefits-list">
+        <li>✅ The best product management content</li>
+        <li>✅ Connections to the best companies hiring product managers</li>
+        <li>✅ Ways to ace product interviews</li>
+        <li>✅ Ways to ace product interviews</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    const scrollContainer = document.getElementById('featureScroll');
+    const scrollAmount = 220;
+
+    document.getElementById('scrollRight').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    document.getElementById('scrollLeft').addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
